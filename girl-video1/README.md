@@ -19,3 +19,6 @@ npm run serve
 > 该项目逐渐完善中，有bug很正常。
 > 若是发现bug，可去我的博客给我留言
 > 博客指路=>[https://roydon.xyz](https://roydon.xyz)
+
+## 推荐使用Chrome
+### 不推荐火狐！不推荐火狐！！
