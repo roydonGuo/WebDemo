@@ -46,7 +46,9 @@ export default {
       autoPlayVideo: true,
     };
   },
-  created() {},
+  created() {
+    // this.$message("左侧为自动播放,动态可调,请点击视频下方'自动播放'按钮");
+  },
   mounted() {
     console.log(this.$refs.videoOne);
     // 监听视频播放
@@ -80,6 +82,15 @@ export default {
     },
     autoSwift() {
       this.autoPlayVideo = !this.autoPlayVideo;
+      this.$message({
+        message: " 左侧为" + (this.autoPlayVideo === true ? "自动播放" : "手动播放"),
+        showClose: true,
+        center: true,
+        dangerouslyUseHTMLString: true,
+        iconClass: "el-icon-message-solid",
+        duration: 2000,
+        offset: 10,
+      });
     },
     next() {
       // this.showVideo = false;
