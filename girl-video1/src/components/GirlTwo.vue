@@ -1,6 +1,7 @@
 <template>
   <div class="girl2">
     <!-- 第二版 -->
+    <!-- 待完善~~~ -->
     <video
       id="girl-video-2"
       v-if="showVideo"
