@@ -41,6 +41,7 @@ export default {
       duration: 0, // 视频总时长
       currentTime: 0, // 目前时长
       videoPlay: true,
+      autoPlayVideo: true,
     };
   },
   created() {},
@@ -49,8 +50,8 @@ export default {
     // 监听视频播放
     this.$refs.videoOne.addEventListener("play", () => {
       this.videoPlay = "play";
-      console.log(this.$refs.videoOne.duration + "===");
-      console.log(this.$refs.videoOne.currentTime + "===");
+      // console.log(this.$refs.videoOne.duration + "===");
+      // console.log(this.$refs.videoOne.currentTime + "===");
       this.duration = this.$refs.videoOne.duration;
       this.currentTime = this.$refs.videoOne.currentTime;
       console.log("video is playing");
@@ -60,7 +61,7 @@ export default {
     this.$refs.videoOne.addEventListener("pause", () => {
       this.videoPlay = "pause";
       this.currentTime = this.$refs.videoOne.currentTime;
-      if (this.currentTime === this.duration) {
+      if (this.$refs.videoOne.duration == this.$refs.videoOne.currentTime) {
         this.autoReloadV1();
       }
       console.log("video is stop");
@@ -69,8 +70,9 @@ export default {
   },
   methods: {
     autoReloadV1() {
-        this.showVideo = false;
-        this.$emit("reloadV1", this.showVideo);
+      // alert("自动播放开始");
+      this.showVideo = false;
+      this.$emit("reloadV1", this.showVideo);
     },
     next() {
       // this.showVideo = false;
