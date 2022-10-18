@@ -19,7 +19,9 @@
         icon="el-icon-arrow-left"
         @click="next"
       ></el-button>
-      <button class="refresh" @click="autoSwift">{{ autoPlayVideo }}</button>
+      <button class="refresh" @click="autoSwift">
+        {{ autoPlayVideo === true ? "自动播放" : "手动播放" }}
+      </button>
       <el-button
         class="next"
         icon="el-icon-arrow-right"
@@ -41,7 +43,7 @@ export default {
       duration: 0, // 视频总时长
       currentTime: 0, // 目前时长
       videoPlay: true,
-      autoPlayVideo: "自动播放",
+      autoPlayVideo: true,
     };
   },
   created() {},
@@ -61,8 +63,8 @@ export default {
     this.$refs.videoOne.addEventListener("pause", () => {
       this.videoPlay = "pause";
       this.currentTime = this.$refs.videoOne.currentTime;
-      if (this.autoPlayVideo === "自动播放") {
-        if (this.$refs.videoOne.duration == this.$refs.videoOne.currentTime) {
+      if (this.autoPlayVideo === true) {
+        if (this.$refs.videoOne.duration === this.$refs.videoOne.currentTime) {
           this.autoReloadV1();
         }
       }
@@ -77,16 +79,15 @@ export default {
       this.$emit("reloadV1", this.showVideo);
     },
     autoSwift() {
-      this.autoPlayVideo = "手动播放";
+      this.autoPlayVideo = !this.autoPlayVideo;
     },
     next() {
-      this.showVideo = false;
-      this.$nextTick(() => {
-        this.showVideo = true;
-      });
-      // 自动手动播放模式下不可开启父子调用
       // this.showVideo = false;
-      // this.$emit("reloadV1", this.showVideo);
+      // this.$nextTick(() => {
+      //   this.showVideo = true;
+      // });
+      this.showVideo = false;
+      this.$emit("reloadV1", this.showVideo);
     },
   },
 };
