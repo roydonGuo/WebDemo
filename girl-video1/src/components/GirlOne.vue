@@ -1,6 +1,6 @@
 <template>
   <div class="girl1">
-    <!-- 第一版 -->
+    <!-- 第一版，记得更换api，现在是风景api，在app.vue中 -->
     <video
       id="girl-video-1"
       controls="controls"
@@ -10,7 +10,7 @@
       preload
       ref="videoOne"
       width="100%"
-      src="https://tucdn.wpon.cn/api-girl/index.php?wpon=302"
+      src="https://v.api.aa1.cn/api/api-fj/index.php?aa1=suf7y58th48u935"
     ></video>
 
     <div class="controller">
@@ -136,10 +136,10 @@ video {
 .controller .refresh {
   display: inline-block;
   height: 64%;
-  width: 12%;
+  width: 30%;
   margin: 0px 1%;
   background: aquamarine;
-  border-radius: 50%;
+  border-radius: 10px;
   line-height: 1;
   color: black;
   font-weight: 800;

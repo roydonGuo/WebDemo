@@ -11,7 +11,7 @@
       preload
       ref="videoTwo"
       width="100%"
-      src="https://v.api.aa1.cn/api/api-dy-girl/index.php?aa1=ajdu987hrjfw"
+      src="https://v.api.aa1.cn/api/api-fj/index.php?aa1=suf7y58th48u935"
     ></video>
     <div class="controller">
       <el-button
@@ -113,10 +113,10 @@ video {
 .controller .refresh {
   display: inline-block;
   height: 64%;
-  width: 12%;
+  width: 30%;
   margin: 0px 1%;
   background: aquamarine;
-  border-radius: 50%;
+  border-radius: 10px;
   line-height: 1;
   color: black;
   font-weight: 800;

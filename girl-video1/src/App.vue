@@ -8,7 +8,9 @@
 
 <script>
 import GirlOne from "@/components/GirlOne.vue";
+// https://tucdn.wpon.cn/api-girl/index.php?wpon=302
 import GirlTwo from "@/components/GirlTwo.vue";
+// https://v.api.aa1.cn/api/api-dy-girl/index.php?aa1=ajdu987hrjfw
 
 export default {
   name: "App",
